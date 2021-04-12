@@ -1,0 +1,113 @@
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<footer class="page-footer bg-color">
+    <%if(theme.music.enable&&theme.music.fixed){ %>
+        <%- partial('_widget/music') %>
+    <% } %>
+   
+    <div class="container row center-align" style="margin-bottom: <% if (theme.time.enable) { %>15<% } else { %>0<% } %>px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            <!--随机英文句子-->
+            <span id="rainbow" href=''>🌈 获取中...</span>
+            <script>
+            fetch('https://api.eatrice.top')
+            .then(response => response.json())
+            .then(data => {
+            var rainbow = document.getElementById('rainbow');
+            rainbow.innerHTML = data.Content;
+            rainbow.href = "https://rainbow.eatrice.top/?ID=" + data.ID;
+            })
+            .catch(console.error)
+            </script>
+            
+            <span id="busuanzi_container_site_uv">
+                <i class="fa fa-users"></i>
+                次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+            </span>
+
+            <a href="<%- url_for('/about') %>" target="_blank"><%- config.author %></a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            <span id="sitetime"></span>
+            <% if (theme.postInfo.totalCount) { %>
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color"><%= totalcount(site) %></span>&nbsp;字
+            <% } %>
+            <% let socialClass = '' %>
+            <% if (theme.busuanziStatistics && theme.busuanziStatistics.enable) { %>
+            <% socialClass = 'social-statis' %>
+            <% } %>
+            <br> 
+        </div>
+        <div class="col s12 m4 l4 social-link <%- socialClass %>"><%- partial('_partial/social-link') %></div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<!--英文句子API-->
+<script language=javascript>
+    function rainbow() {
+        fetch('https://api.eatrice.top')
+        .then(response => response.json())
+        .then(data => {
+        var rainbow = document.getElementById('rainbow');
+        rainbow.innerHTML = data.Content;
+        rainbow.href = "https://rainbow.eatrice.top/?ID=" + data.ID;
+        })
+        .catch(console.error)
+    }
+</script>
+    
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2020, 08, 02, 00, 00, 00); //北京时间2020-08-02 14:25:50
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        if (diffYears == "0") {
+            document.getElementById("sitetime").innerHTML = "本站已运行 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+        } else {
+            document.getElementById("sitetime").innerHTML = "本站已运行 " +diffYears+" 年 "+diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+        }
+        
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?cf87bab0f4aadd1f63b825593d7b8db4";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    

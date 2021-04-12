@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="/css/gallery.css">
+<link type="text/css" href="/libs/fancybox/jquery.fancybox.css" rel="stylesheet">
+<link type="text/css" href="/libs/justifiedGallery/justifiedGallery.min.css" rel="stylesheet">
+
+<%- partial('_partial/post-cover') %>
+<%
+let galleries = [];
+if (site.data && site.data.galleries) {
+    galleries = site.data.galleries;
+}
+var pageTitle = page.title;
+function getCurrentGallery(galleries, pageTitle) {
+    for (let i = 0; i < galleries.length; i++) {
+        if (galleries[i]['name'] == pageTitle) {
+            return galleries[i];
+        }
+    }
+}
+var currentGallery = getCurrentGallery(galleries, pageTitle)
+
+var photos = currentGallery.photos;
+
+let imageStr = ''
+
+for (var i = 0, len = photos.length; i < len; i++) {
+    var photo = photos[i];
+    imageStr += "<a href=\"https://remmeiko.gitee.io/img-bed/anime/" + photo + "\" " +
+            "     class=\"photo-item\" rel=\"example_group\"" +
+            "     data-fancybox=\"images\">" +
+            "      <img src=\"https://remmeiko.gitee.io/img-bed/anime/" + photo + "\"" +
+            "       alt=" + photo + ">\n" +
+            "    </a>"
+}
+%>
+
+<main class="content">
+    <div class="container">
+        <div class="photo-wrapper">
+            <div class="waterfall" id="mygallery">
+                <%- imageStr %>
+
+            </div>
+    </div>
+</main>
+
+<script src="/libs/fancybox/jquery.fancybox.js"></script>
+<script src="/libs/justifiedGallery/jquery.justifiedGallery.min.js"></script>
+<script>
+  $("a[rel=example_group]").fancybox();
+  //$("#mygallery").justifiedGallery({margins: 5, rowHeight: 150});
+</script>
