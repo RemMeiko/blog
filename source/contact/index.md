@@ -1,5 +1,6 @@
 ---
-title: 留言板
-date: 2020-04-23 07:39:34
+title: contact
+date: 2020-12-10 20:17:08
 type: "contact"
+layout: "contact"
 ---

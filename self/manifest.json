@@ -1,0 +1,22 @@
+{
+  "name": "RemMeiko",
+  "short_name": "RM",
+  "theme_color": "rgba(203,7,83,0.86)",
+  "background_color": "#FAFAFA",
+  "display": "standalone",
+  "Scope": "/",
+  "start_url": "https://remmeiko.github.io/",
+  "icons": [
+    {
+      "src": "/self/128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/self/144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+  ],
+  "splash_pages": null
+}

@@ -1,47 +1,44 @@
 ---
+layout: article
 title: Hello World
-tags:
-  - 总结
-  - blog
-categories:
-  - blog
-keywords: "hello，总结"
-cover: https://cdn.jsdelivr.net/gh/HCLonely/hclonely.github.io/img/Butterfly/006.webp
-toc: True
-abbrlink: 520520
+categories: 杂谈
+tags: [随手记,杂谈]
+img: https://remmeiko.gitee.io/img-bed/anime/1.png
+banner_img: https://api.mz-moe.cn/img.php
+date: 2020-08-01 22:00:00
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
-## Quick Start
+## 博客前言
 
-### Create a new post
+**一些喃喃自语(声明)(2021.3.15.)**
 
-``` bash
-$ hexo new "My New Post"
-```
+> **这些博客对于互联网来说是一堆微不足道的数据，但对于我来说，我希望它能成为一个记录我现实生活中部分点滴的”家“，通过这些文字记录我曾存在于这个世界的证明，通过这些数据将我映射进这个虚拟的世界。因此，此博客除了记录技术学习之类的文章，后续也会杂七杂八记录很多关于我想留下或者分享的故事或者回忆，本来是打算将这些东西独立抽出来搭建一个网站，此博客只留下关于学习和技术记录的文章，但是目前没有时间所以暂时也不想去弄了。**
+>
+> 此博客目前也还没有被百度，谷歌收录，这些事情等以后将技术无关内容抽出来后肯定是会弄的。
 
-More info: [Writing](https://hexo.io/docs/writing.html)
 
-### Run server
 
-``` bash
-$ hexo server
-```
+* **RemMeiko的小屋，昏暗光芒下的独自取暖**
+  - 分享点滴
+  - 分享随想
+  - 记录互联网中留下的足迹
+  - 投射我所期望的世界
 
-More info: [Server](https://hexo.io/docs/server.html)
+**博客正在搭建中......(8.8.)**
 
-### Generate static files
+> 前两篇博客是在搭建博客时拿来测试使用的，我更愿称之为数据，不用太在意
 
-``` bash
-$ hexo generate
-```
+# **弱小和无知从来不是生存的障碍,傲慢才是**
 
-More info: [Generating](https://hexo.io/docs/generating.html)
 
-### Deploy to remote sites
 
-``` bash
-$ hexo deploy
-```
+> 于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野里，没有早一步，也没有晚一步，刚巧赶上了，那也没有别的话可说，惟有轻轻的问一声：“噢，你也在这里吗？”
+>
+> ​																				——《流言》
 
-More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+> 每个人的生命中
+> 都有无比艰难的那一年
+> 将人生变得美好而辽阔。 
+
+> 我慢慢明白了为什么我不快乐，因为我总是期待一个结果。<br>看一本书期待它让我变得深刻；吃饭、游泳期待它让我一斤斤瘦下；<br>发一条微信期待它被回复；对别人好期待被回待以好；<br>写一个故事说一个心情期待被关注安慰；参加一个活动，期待换来充实丰富的经历<br>这些预设的期待如果实现了，我长舒一口气，如果没有实现呢，就自怨自艾。<br>可是小时候也是同一个我，用一个下午的时间看蚂蚁搬家，等石头开花。<br>小时候不期待结果，小时候哭笑都不打折。<br>--------[知乎](https://www.zhihu.com/question/361120282/answer/1172918310)
+>
