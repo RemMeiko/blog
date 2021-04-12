@@ -3,20 +3,19 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: RemMeiko
-subtitle: 一切美好都会如约而至
-description: 技术宅改变世界
-keywords: 技术宅改变世界
-author: Rem Meiko
+title: Mikasa
+subtitle: 'Mikasa的墙中小屋'
+description: '自由之翼'
+keywords: [考研, 前端]  #网站的关键词
+author: Mikasa
 language: zh-CN
-timezone: ''
-
+timezone: 'Asia/changsha'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://RemMeiko.github.io
+url: http://yoursite.com
 root: /
-permalink: :title/ ## :year/:month/:day/:title/
+permalink: posts/:abbrlink/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -31,7 +30,12 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+  - 'home/*'
+  - 'home/**'
+  - 'box/*'
+  - 'box/**'
 
+  
 # Writing
 new_post_name: :title.md # File name of new posts
 default_layout: post
@@ -45,15 +49,14 @@ render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
-
-# 代码高亮总设置
 highlight:
-  enable: false
-  line_number: false
-  # auto_detect: false
-  tab_replace: 
-  wrap: false
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
   hljs: false
+
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
@@ -78,8 +81,8 @@ meta_generator: true
 ## http://momentjs.com/docs/#/displaying/format/
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
-## updated_option supports 'mtime', 'date', 'empty'
-updated_option: 'mtime'
+## Use post's date for updated date unless set in front-matter
+use_date_for_updated: false
 
 # Pagination
 ## Set per_page to 0 to disable pagination
@@ -95,64 +98,44 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: hexo-theme-matery
+theme: Butterfly
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  - type: git
-    repo: git@github.com:RemMeiko/RemMeiko.github.io.git
-    branch: master
-  - type: git
-    repo: git@e.coding.net:remmeiko/remmeiko/remmeiko.git
-    branch: master
+  type: ''
 
+# bilibili番剧列表配置
+bangumi:
+  enable: true 
+  vmid: '351534170'
+  title: '追番列表'
+  quote: '生命不息，追番不止！'
+  show: 1
+  loading: '/img/bangumi-loading.gif'
 
+# 添加卡通人物
 live2d:
-  enable: true
-  scriptFrom: local
-  pluginRootPath: live2dw/
-  pluginJsPath: lib/
-  pluginModelPath: assets/
-  model:
-    use: live2d-widget-model-hibiki  #模板目录，在node_modules里
-  display:
-    position: left
-    width: 150 
-    height: 300
-  mobile:
-    show: false  #是否在手机进行显示
-
-lazyload:
-  enable: true  # 是否开启图片懒加载
-  onlypost: false  # 是否只对文章的图片做懒加载
-  loadingImg: ./medias/让我静静.gif
-  
-  # 插件配置
-  # RSS
-# Extensions
-## Plugins: http://hexo.io/plugins/
-#RSS订阅
-plugin:
-- hexo-generator-feed
-#Feed Atom
-feed:
-type: atom
-path: atom.xml
-limit: 20
-
-# 关闭原有的代码高亮，使用自己的
-prism_plugin:
-  mode: 'preprocess'    # realtime/preprocess
-  theme: 'tomorrow'
-  line_number: false    # default false
-  custom_css:
-
-githubEmojis:
-  enable: true
-  className: github-emoji
-  inject: true
-  styles:
-  customEmojis:
-
-
+	enable: true
+	scriptFrom: local
+	model: 
+		use: live2d-widget-model-haruto #模型选择
+	display: 
+		position: left  #模型位置
+		width: 120       #模型宽度
+		height: 260      #模型高度
+	mobile: 
+    show: false      #是否在手机端显示
+    
+# 添加豆瓣
+# 豆瓣
+douban:
+  user: 211251422
+  builtin: true
+  book:
+    title: '好书推荐'
+    quote: '读书好，好读书，读好书'
+  movie:
+    title: '电影'
+    quote: '那些在电影院看过的电影'
+  timeout: 10000
